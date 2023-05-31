@@ -1,10 +1,24 @@
+// fazendo a requisição utilizando API fetch
 const listaClientes = () => {
     return fetch(`http://localhost:3000/profile`)
     .then(resposta => {
         return resposta.json()
     })
 }
-// fazendo a requisição utilizando API fetch
+// requisição POST para cadastrar novos clientes
+const criaCliente = (nome, email) => {
+    return fetch(`http://localhost:3000/profile`, {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({
+            nome,
+            email
+        })
+    })
+}
 export const clienteService = {
-    listaClientes
+    listaClientes,
+    criaCliente
 }
