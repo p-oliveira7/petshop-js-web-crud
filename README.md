@@ -1,1 +1,2 @@
 #  JS na web: crud com JavaScript assíncrono
+Este projeto esta sendo comentado praticamente linha por linha, pois está sendo usado como uma espécie de guia para um CRUD mais complexo que está sendo desenvolvido para um projeto na faculdade.

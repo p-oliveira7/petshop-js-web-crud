@@ -2,7 +2,7 @@ import { clienteService } from "../service/cliente-service.js"
 
 // percorrendo o DOM cadastra_cliente.html
 const formulario = document.querySelector('[data-form]')
-
+// adiciono um listener para o botão de cadastrar 
 formulario.addEventListener('submit', (evento) => {
     evento.preventDefault()
     const nome = evento.target.querySelector('[data-nome]').value

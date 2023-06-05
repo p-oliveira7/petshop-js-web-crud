@@ -24,9 +24,37 @@ const removeCliente = (id) => {
         method:'DELETE'
     })
 }
+
+// req GET com id para o preview na pagina de editar clientes
+const detalhaCliente = (id) => {
+    return fetch(`http://localhost:3000/profile/${id}`)
+    .then(resposta => {
+        return resposta.json()
+    })
+}
+
+// req PUT para a tela de editar recebe id nome e email e substitui no json
+const atualizaCliente = (id, nome, email) => {
+    return fetch(`http://localhost:3000/profile/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type' : 'application/json'
+        },
+        body: JSON.stringify({
+            nome: nome,
+            email: email
+        })
+    })
+    .then( resposta => {
+        return resposta.json()
+    })
+}
+
 // exportando as funções do cliente-service
 export const clienteService = {
     listaClientes,
     criaCliente,
-    removeCliente
+    removeCliente,
+    detalhaCliente,
+    atualizaCliente
 }
